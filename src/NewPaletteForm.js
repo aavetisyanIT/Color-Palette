@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
 import PaletteFormNav from './PaletteFormNav';
 import ColorPickerForm from './ColorPickerForm';
+import Drawer from '@material-ui/core/Drawer';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
@@ -18,24 +18,7 @@ const styles = (theme) => ({
 	root: {
 		display: 'flex',
 	},
-	appBar: {
-		transition: theme.transitions.create(['margin', 'width'], {
-			easing: theme.transitions.easing.sharp,
-			duration: theme.transitions.duration.leavingScreen,
-		}),
-	},
-	appBarShift: {
-		width: `calc(100% - ${drawerWidth}px)`,
-		marginLeft: drawerWidth,
-		transition: theme.transitions.create(['margin', 'width'], {
-			easing: theme.transitions.easing.easeOut,
-			duration: theme.transitions.duration.enteringScreen,
-		}),
-	},
-	menuButton: {
-		marginLeft: 12,
-		marginRight: 20,
-	},
+
 	hide: {
 		display: 'none',
 	},
@@ -56,7 +39,7 @@ const styles = (theme) => ({
 	content: {
 		flexGrow: 1,
 		height: 'calc(100vh - 64px)',
-		padding: theme.spacing(3),
+		padding: theme.spacing.unit * 3,
 		transition: theme.transitions.create('margin', {
 			easing: theme.transitions.easing.sharp,
 			duration: theme.transitions.duration.leavingScreen,
@@ -110,18 +93,14 @@ class NewPaletteForm extends Component {
 		});
 	}
 	clearColors() {
-		this.setState({
-			colors: [],
-		});
+		this.setState({ colors: [] });
 	}
 	addRandomColor() {
-		//pick randon color from existing palettes
+		//pick random color from existing palettes
 		const allColors = this.props.palettes.map((p) => p.colors).flat();
 		var rand = Math.floor(Math.random() * allColors.length);
 		const randomColor = allColors[rand];
-		this.setState({
-			colors: [...this.state.colors, randomColor],
-		});
+		this.setState({ colors: [...this.state.colors, randomColor] });
 	}
 	handleSubmit(newPaletteName) {
 		const newPalette = {
@@ -147,10 +126,10 @@ class NewPaletteForm extends Component {
 		const { classes, maxColors, palettes } = this.props;
 		const { open, colors } = this.state;
 		const paletteIsFull = colors.length >= maxColors;
+
 		return (
 			<div className={classes.root}>
 				<PaletteFormNav
-					classes={classes}
 					open={open}
 					palettes={palettes}
 					handleSubmit={this.handleSubmit}
@@ -202,7 +181,7 @@ class NewPaletteForm extends Component {
 				>
 					<div className={classes.drawerHeader} />
 					<DraggableColorList
-						colors={this.state.colors}
+						colors={colors}
 						removeColor={this.removeColor}
 						axis='xy'
 						onSortEnd={this.onSortEnd}

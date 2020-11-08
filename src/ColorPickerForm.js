@@ -6,10 +6,7 @@ import { ChromePicker } from 'react-color';
 class ColorPickerForm extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			currentColor: 'teal',
-			newColorName: '',
-		};
+		this.state = { currentColor: 'teal', newColorName: '' };
 		this.updateCurrentColor = this.updateCurrentColor.bind(this);
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,13 +23,13 @@ class ColorPickerForm extends Component {
 			),
 		);
 	}
+	updateCurrentColor(newColor) {
+		this.setState({ currentColor: newColor.hex });
+	}
 	handleChange(evt) {
 		this.setState({
 			[evt.target.name]: evt.target.value,
 		});
-	}
-	updateCurrentColor(newColor) {
-		this.setState({ currentColor: newColor.hex });
 	}
 	handleSubmit() {
 		const newColor = {
@@ -42,6 +39,7 @@ class ColorPickerForm extends Component {
 		this.props.addNewColor(newColor);
 		this.setState({ newColorName: '' });
 	}
+
 	render() {
 		const { paletteIsFull } = this.props;
 		const { currentColor, newColorName } = this.state;
@@ -73,9 +71,7 @@ class ColorPickerForm extends Component {
 						color='primary'
 						disabled={paletteIsFull}
 						style={{
-							backgroundColor: paletteIsFull
-								? 'grey'
-								: this.state.currentColor,
+							backgroundColor: paletteIsFull ? 'grey' : currentColor,
 						}}
 					>
 						{paletteIsFull ? 'Palette Full' : 'Add Color'}
@@ -85,5 +81,4 @@ class ColorPickerForm extends Component {
 		);
 	}
 }
-
 export default ColorPickerForm;
