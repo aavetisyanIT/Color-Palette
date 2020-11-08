@@ -17,7 +17,7 @@ const styles = {
 	},
 	colorNameInput: {
 		width: '100%',
-		height: '70%',
+		height: '70px',
 	},
 };
 
@@ -61,7 +61,6 @@ class ColorPickerForm extends Component {
 	render() {
 		const { paletteIsFull, classes } = this.props;
 		const { currentColor, newColorName } = this.state;
-
 		return (
 			<div>
 				<ChromePicker
@@ -73,8 +72,10 @@ class ColorPickerForm extends Component {
 					<TextValidator
 						value={newColorName}
 						className={classes.colorNameInput}
+						placeholder='Color Name'
 						name='newColorName'
 						variant='filled'
+						margin='normal'
 						onChange={this.handleChange}
 						validators={[
 							'required',
@@ -91,7 +92,6 @@ class ColorPickerForm extends Component {
 						variant='contained'
 						type='submit'
 						color='primary'
-						margin='normal'
 						disabled={paletteIsFull}
 						className={classes.addColor}
 						style={{
