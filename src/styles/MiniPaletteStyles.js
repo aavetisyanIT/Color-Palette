@@ -40,7 +40,6 @@ export default {
 		position: 'relative',
 		marginButtom: '-3.5',
 	},
-	delete: {},
 	deleteIcon: {
 		color: 'white',
 		backgroundColor: '#eb3b30',
