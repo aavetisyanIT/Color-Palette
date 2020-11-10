@@ -54,8 +54,9 @@ export default {
 		gridGap: '2.5rem',
 		[sizes.down('md')]: {
 			gridTemplateColumns: 'repeat(2, 50%)',
+			gridGap: '5%',
 		},
-		gridGap: '5%',
+
 		[sizes.down('xs')]: {
 			gridTemplateColumns: 'repeat(1, 100%)',
 			gridGap: '1.5rem',
