@@ -30,6 +30,7 @@ class NewPaletteForm extends Component {
 		this.removeColor = this.removeColor.bind(this);
 		this.clearColors = this.clearColors.bind(this);
 		this.addRandomColor = this.addRandomColor.bind(this);
+		this.checkDuplicateColor = this.checkDuplicateColor.bind(this);
 	}
 
 	handleDrawerOpen = () => {
@@ -54,6 +55,9 @@ class NewPaletteForm extends Component {
 	clearColors() {
 		this.setState({ colors: [] });
 	}
+	checkDuplicateColor(colorName) {
+		return this.state.colors.some((color) => color.name === colorName);
+	}
 	addRandomColor() {
 		const allColors = this.props.palettes.map((p) => p.colors).flat();
 		let rand;
@@ -62,9 +66,7 @@ class NewPaletteForm extends Component {
 		while (isDuplicateColor) {
 			rand = Math.floor(Math.random() * allColors.length);
 			randomColor = allColors[rand];
-			isDuplicateColor = this.state.colors.some(
-				(color) => color.name === randomColor.name,
-			);
+			isDuplicateColor = this.checkDuplicateColor(randomColor.name);
 		}
 		this.setState({ colors: [...this.state.colors, randomColor] });
 	}
