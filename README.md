@@ -1,6 +1,6 @@
 # ColorPick App
 
-I created this tool to help designers and developers find unique colors and striking gradient combinations. By making a tool that solely generates random colors and gradients, colors are found that would otherwise be unthought of. I hope ColorSpark becomes a useful tool in your toolkit to help spark new ideas for your next design project.
+I created this tool to help designers and developers find unique colors and striking gradient combinations. By making a tool that solely generates random colors and gradients, colors are found that would otherwise be unthought of. I hope ColorPick becomes a useful tool in your toolkit to help spark new ideas for your next design project.
 
 ## Getting Started
 
@@ -36,7 +36,7 @@ These instructions will help you to get familiar with UI
 
 ## Authors
 
--  **Artur Avetisyan** - _Initial work_ - [PurpleBooth](https://github.com/aavetisyanIT/Color-Palette)
+-  **Artur Avetisyan** - _Initial work_ - [Code source](https://github.com/aavetisyanIT/Color-Palette)
 
 ## Acknowledgments
 
