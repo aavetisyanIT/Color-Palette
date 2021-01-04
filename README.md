@@ -2,9 +2,9 @@
 
 I created this tool to help designers and developers find unique colors and striking gradient combinations. By making a tool that solely generates random colors and gradients, colors are found that would otherwise be unthought of. I hope ColorPick becomes a useful tool in your toolkit to help spark new ideas for your next design project.
 
-## Getting Started
+This is a responsive web application inspired by [Flat UI Colors](https://flatuicolors.com/) and [Material UI Colors](http://materialuicolors.co/?utm_source=launchers). You are able to view premade color palettes to inspire new ideas, create your own color palettes, control relative darkness or lightness of colors and preview dynamically generated hues of picked color. Copy a color choosing the color format (HEX, RGB, RGBA) suited for you. Set up your own palettes and reorder colors with drag and drop functionality. If you need help to come up a trandy color there is option to generate random colors.
 
-These instructions will help you to get familiar with UI
+## Getting familiar
 
 ### Home page
 
